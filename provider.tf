@@ -5,21 +5,31 @@ terraform {
         proxmox = {
             source = "Telmate/proxmox"
             version = "2.9.11"
+
+            # Optional Logging functionality, to enable uncomment the lines below.
+
+            # pm_log_enable = true
+            # pm_log_file   = "terraform-plugin-proxmox.log"
+            # pm_debug      = true
+            # pm_log_levels = {
+            #     _default    = "debug"
+            #     _capturelog = ""
+            # }
         }
     }
 }
 
 variable "proxmox_api_url" {
-    type = "string"
+    type = string
 }
 
 variable "proxmox_api_token_id" {
-    type = "string"
+    type = string
     sensitive = true
 }
 
 variable "proxmox_api_token_secret" {
-    type = "string"
+    type = string
     sensitive = true
 }
 
